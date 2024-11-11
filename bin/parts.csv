@@ -1,0 +1,16 @@
+modelo,marca,nombre,modelo_carro,anio_carro,precio,existencia
+ABC123,Murciélago,radiator,Sierra 1500,2004,189,false
+ABC123,Firebird,brake pad,Town & Country,1984,446,false
+ABC123,Electra,air filter,G8,1989,405,false
+DEF789,CR-V,tire,Mazdaspeed 3,2006,325,false
+JKL321,Corvette,tire,F150,2011,439,false
+DEF789,F250,engine,Silverado,2012,307,false
+XYZ456,Crown Victoria,fuel pump,GT500,2008,430,true
+XYZ456,Equinox,tire,Express 3500,2010,318,true
+MNO654,Grand Am,radiator,LeSabre,1993,481,false
+JKL321,944,engine,Swift,1991,225,true
+JKL321,Topaz,brake pad,IS F,1991,415,true
+ABC123,300CE,radiator,QX,1993,136,false
+JKL321,Legacy,spark plug,LR3,1998,238,true
+DEF789,Montero,oil filter,A8,1997,324,true
+JKL321,Ram 1500,brake pad,Matrix,2007,248,true
