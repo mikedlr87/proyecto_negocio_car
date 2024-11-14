@@ -6,19 +6,24 @@
 
 using namespace std;
 
-struct {
+struct Vehiculo{
+        string placa;
         string modelo;
         string marca;
-        string placa;
         string color;
-        string anio;
+        int anio;
         int kilometraje;
         bool rentado;
         string motor;
         int precio_renta;
         int cedula_cliente;
-        int fecha_de_entrega;
-   } Vehiculo; 
+        string fecha_de_entrega;
+   }; 
+//hacer la estructura del cliente
+struct Cliente{
+     
+   }; 
+
 
 const int maxVehiculos = 100;
 
@@ -38,42 +43,46 @@ string line;
 while (getline(file,line) && numVehiculos < maxVehiculos){
 istringstream row(line);
 Vehiculo& vehiculo = vehiculos[numVehiculos];
+string temp;
 
-getline(row, vehiculo.marca, ',');
-getline(row, vehiculo.color, ',');
 getline(row, vehiculo.placa, ',');
 getline(row, vehiculo.modelo, ',');
-getline(row, vehiculo.anio, ',');
 getline(row, vehiculo.marca, ',');
-getline(row, vehiculo.kilometraje, ',');
+getline(row, vehiculo.color, ',');
+getline(row, temp, ',');
+vehiculo.anio = (!temp.empty() ? stoi(temp) : 0);
+getline(row, temp, ',');
+vehiculo.kilometraje = (!temp.empty() ? stoi(temp) : 0);
+getline(row, vehiculo.marca, ',');
+getline(row, temp, ',');
+//booleano
+vehiculo.rentado = (temp=="true");
 getline(row, vehiculo.motor, ',');
-getline(row, vehiculo.precio_renta, ',');
-getline(row, vehiculo.cedula_cliente, ',');
+getline(row, temp, ',');
+vehiculo.precio_renta = (!temp.empty() ? stoi(temp) : 0);
+getline(row, temp, ',');
+vehiculo.cedula_cliente = (!temp.empty() ? stoi(temp) : 0);
 getline(row, vehiculo.fecha_de_entrega, ',');
 
 numVehiculos++;
 
  }
-file.close;
+file.close();
 }
 
 void mostrarVehiculo() const {
     for (int i=0; i<numVehiculos; ++i){
         const Vehiculo& veh = vehiculos[i];
-
-        cout<< i + 1 <<". modelo" << veh.modelo <<", marca"<< veh.marca
-        <<", placa: "<<veh.placa<<",color"<<veh.color<<",anio"<<veh.anio<<"kilometraje"
-        <<veh.kilometraje<<",renytado"<<veh.rentado <<",motor:"
-        <<veh.motor<<", precio renta:"<<veh.precio_renta<<"\n";
+        cout<< i + 1 <<". modelo " << veh.modelo <<", marca "<< veh.marca
+        <<", placa: "<<veh.placa<<", color "<<veh.color<<", anio "<<veh.anio<<", kilometraje: "
+        <<veh.kilometraje<<", marca: " <<veh.marca<<",rentado:" <<(veh.rentado ? "si":"no")<<",motor:"
+        <<veh.motor<<", precio renta: "<<veh.precio_renta <<" , fecha de entrega:" <<veh.fecha_de_entrega;
     }
 }
-
-
-
 private:
     Vehiculo vehiculos[maxVehiculos];
     int numVehiculos;
- }
+ };
 int main() {
     manejoVehiculo gestion;
     gestion.mostrarVehiculo();
