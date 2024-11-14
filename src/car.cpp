@@ -21,9 +21,12 @@ struct Vehiculo{
    }; 
 //hacer la estructura del cliente
 struct Cliente{
-     
+    int cedula;
+    string nombre;
+    string apellido;
+    string email;
+    
    }; 
-
 
 const int maxVehiculos = 100;
 
@@ -45,17 +48,16 @@ istringstream row(line);
 Vehiculo& vehiculo = vehiculos[numVehiculos];
 string temp;
 
-getline(row, vehiculo.placa, ',');
 getline(row, vehiculo.modelo, ',');
 getline(row, vehiculo.marca, ',');
+getline(row, vehiculo.placa, ',');
 getline(row, vehiculo.color, ',');
 getline(row, temp, ',');
 vehiculo.anio = (!temp.empty() ? stoi(temp) : 0);
 getline(row, temp, ',');
 vehiculo.kilometraje = (!temp.empty() ? stoi(temp) : 0);
-getline(row, vehiculo.marca, ',');
-getline(row, temp, ',');
 //booleano
+getline(row, temp, ',');
 vehiculo.rentado = (temp=="true");
 getline(row, vehiculo.motor, ',');
 getline(row, temp, ',');
@@ -73,10 +75,10 @@ file.close();
 void mostrarVehiculo() const {
     for (int i=0; i<numVehiculos; ++i){
         const Vehiculo& veh = vehiculos[i];
-        cout<< i + 1 <<". modelo " << veh.modelo <<", marca "<< veh.marca
-        <<", placa: "<<veh.placa<<", color "<<veh.color<<", anio "<<veh.anio<<", kilometraje: "
-        <<veh.kilometraje<<", marca: " <<veh.marca<<",rentado:" <<(veh.rentado ? "si":"no")<<",motor:"
-        <<veh.motor<<", precio renta: "<<veh.precio_renta <<" , fecha de entrega:" <<veh.fecha_de_entrega;
+        cout<< i + 1 <<". Modelo: " << veh.modelo <<", Marca: "<< veh.marca
+        <<", Placa: "<<veh.placa<<", Color: "<<veh.color<<", Anio: "<<veh.anio<<", Kilometraje: "
+        <<veh.kilometraje<<", Rentado:" <<(veh.rentado ? "si":"no")<<", Motor: "
+        <<veh.motor<<", Precio renta: "<<veh.precio_renta <<" , Fecha de entrega:" <<veh.fecha_de_entrega<<"\n";
     }
 }
 private:
