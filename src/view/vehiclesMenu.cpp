@@ -1,18 +1,17 @@
 #include<iostream>
-#include<../controller/vehiclesController.cpp>
+#include<../controller/vehiclesController.h>
 
 using namespace std;
 
     manejoVehiculo gestionVehiculo;
     
- cout << "\ningrese 1 para el menu vehiculos:";
 
 
  if (eleccion == 1) {
             int opcionVehiculo;
             do {
                 cout << "\nque desea hacer con los vehiculos";
-                cout << "\ningrese 1 para mostrar vehiculos";
+                cout << "\ningrese 1 para mostrar vehiculos test";
                 cout << "\ningrese 2 para agregar un vehiculo";
                 cout << "\ningrese 3 para editar un vehiculo por placa";
                 cout << "\ningrese 4 para eliminar un vehiculo por placa";

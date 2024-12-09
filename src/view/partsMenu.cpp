@@ -1,11 +1,14 @@
 #include<iostream>
-#include<../controller/partsController.cpp>
+#include<../controller/partsController.h>
 
 using namespace std;
 
-    manejoRepuestos gestionRepuesto;
+int main(){
+    
+}
 
-  } else if (eleccion == 3) {
+
+    manejoRepuestos gestionRepuesto;
             int opcionRepuesto;
             do {
                 cout << "\nque desea hacer con los repuestos:\n";
@@ -55,7 +58,7 @@ using namespace std;
                         break;
                 }
             } while (opcionRepuesto != 0);
-        } else if (eleccion == 0) {
+         else if (eleccion == 0) {
             cout << "Saliendo del programa\n";
         } else {
             cout << "Opcion invalida\n";

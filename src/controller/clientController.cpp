@@ -6,7 +6,7 @@ using namespace std;
 class manejoClientes{
     public:
 
-    manejoClientes():numClientes (0){
+    manejoClientes():numClientes (0){   
         cargarClientes();
     }
 
